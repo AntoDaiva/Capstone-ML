@@ -30,11 +30,6 @@ class FACELOADING:
 
             # Resize the face to the target size
             face_arr = cv.resize(face, self.target_size)
-
-            # Display the face using OpenCV
-            cv.imshow('Detected Face', cv.cvtColor(face_arr, cv.COLOR_RGB2BGR))  # Convert back to BGR for OpenCV
-            cv.waitKey(0)  # Wait for a key press
-            cv.destroyAllWindows()  # Close the window after key press
         else:
             print("No face detected.")
         return face_arr
@@ -98,4 +93,5 @@ if __name__ == "__main__":
         EMBEDDED_x.append(get_embedding(img, embedder))
 
     EMBEDDED_X = np.asarray(EMBEDDED_x)
-    
+
+    np.savez_compressed('faces_embeddings_done_4classes.npz', embeddings=EMBEDDED_X, labels=Y)

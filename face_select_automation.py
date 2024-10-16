@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import os
 
 # Load the YOLO face detection model
-model = YOLO('best.pt')  # Load pre-trained YOLO face detection model
+model = YOLO('model/best.pt')  # Load pre-trained YOLO face detection model
 
 # Define image path and output directory for the extracted faces
 image_path = 'tes_img_1.jpg'
