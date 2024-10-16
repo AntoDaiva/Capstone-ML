@@ -1,0 +1,6 @@
+opencv-python
+tensorflow
+matplotlib==3.6.2
+ultralytics==8.3.10
+keras-facenet==0.3.2
+numpy==1.24.1
