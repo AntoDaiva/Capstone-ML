@@ -15,8 +15,6 @@ image = cv2.imread(image_path)
 
 # Perform face detection using YOLO
 results = model(image)
-print(type(image))
-print(image[0])
 
 # Loop over detected faces (each detection)
 for i, (bbox, conf, cls) in enumerate(zip(results[0].boxes.xyxy, results[0].boxes.conf, results[0].boxes.cls)):
