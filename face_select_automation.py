@@ -6,7 +6,7 @@ import os
 model = YOLO('model/best.pt')  # Load pre-trained YOLO face detection model
 
 # Define image path and output directory for the extracted faces
-image_path = 'test_assets/tes_img_1.jpg'
+image_path = 'test_assets/tes_img_3.jpg'
 output_dir = 'extracted_faces/'
 os.makedirs(output_dir, exist_ok=True)
 
@@ -24,7 +24,7 @@ for i, (bbox, conf, cls) in enumerate(zip(results[0].boxes.xyxy, results[0].boxe
     face_crop = image[y_min:y_max, x_min:x_max]
 
     # Resize the extracted face to 160x160
-    # face_resized = cv2.resize(face_crop, (160, 160))
+    face_resized = cv2.resize(face_crop, (160, 160))
 
     # Save the resized face to the output directory
     face_filename = os.path.join(output_dir, f'face_{i}.jpg')
