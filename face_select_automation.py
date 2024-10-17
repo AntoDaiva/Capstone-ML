@@ -6,7 +6,7 @@ import os
 model = YOLO('model/best.pt')  # Load pre-trained YOLO face detection model
 
 # Define image path and output directory for the extracted faces
-image_path = 'tes_img_1.jpg'
+image_path = 'test_assets/tes_img_1.jpg'
 output_dir = 'extracted_faces/'
 os.makedirs(output_dir, exist_ok=True)
 
